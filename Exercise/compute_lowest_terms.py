@@ -33,7 +33,9 @@ def highest_possible_common_factor(num,denom):
 	#find the smallest between num and denom
 	smallest = abs(num) if abs(num) < abs(denom) else abs(denom)
 	
-	if smallest == 1:
+	if (num % smallest == 0) and (denom % smallest == 0):
+		hpcf = smallest 
+	elif smallest == 1:
 		hpcf = 1
 	elif smallest == 2:
 		hpcf = 2
@@ -47,4 +49,4 @@ def highest_possible_common_factor(num,denom):
 
 
 if __name__ == "__main__":
-	print(lowest_terms('15/12'))
+	print(lowest_terms('20/10'))
