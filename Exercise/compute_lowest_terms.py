@@ -5,6 +5,8 @@ def lowest_terms(x):
 
 	if num == 0:
 		return '0'
+	elif denom == 0:
+		return 'Undefined'
 	else:
 		num, denom = find_lowest_terms(num,denom)
 		result = nums_to_string(num,denom)
@@ -64,4 +66,4 @@ def highest_possible_common_factor(num,denom):
 
 
 if __name__ == "__main__":
-	print(lowest_terms('20/-10'))
+	print(lowest_terms('0/1'))
