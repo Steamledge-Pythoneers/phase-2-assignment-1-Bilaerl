@@ -10,9 +10,9 @@ def lowest_terms(x):
 		return 'Undefined'
 	else:
 		#find the lowest terms for num and denom
-		num, denom = find_lowest_terms(num,denom)
+		num, denom = find_lowest_terms(num, denom)
 		#convert terms from integers to string
-		result = nums_to_string(num,denom)
+		result = nums_to_string(num, denom)
 		return result
 
 
@@ -30,10 +30,11 @@ def string_to_nums(string):
 	splitted_strings = string.split('/')
 	#convert splitted strings to integers
 	splitted_nums = [int(string) for string in splitted_strings]
+
 	return splitted_nums
 
 
-def nums_to_string(num,denom):
+def nums_to_string(num, denom):
 	"""Convert given integers into a fraction in string form
 
 	INPUT:
@@ -48,7 +49,7 @@ def nums_to_string(num,denom):
 	return string
 
 
-def highest_possible_common_factor(num,denom):
+def highest_possible_common_factor(num, denom):
 	""" Find the highest possible common factor between two numbers
 
 	The highest possible common factor of given set of numbers is a number that might or might not be
@@ -75,12 +76,12 @@ def highest_possible_common_factor(num,denom):
 	elif smallest == 3:
 		hpcf = 3
 	else:
-		hpcf = smallest//2
+		hpcf = smallest // 2
 
 	return hpcf
 
 
-def find_lowest_terms(num,denom):
+def find_lowest_terms(num, denom):
 	"""Find the lowest terms for given two numbers
 
 	INPUT:
@@ -93,7 +94,7 @@ def find_lowest_terms(num,denom):
 	"""
 
 	#get the highest possible common multiple of the two numbers
-	hpcf = highest_possible_common_factor(num,denom)
+	hpcf = highest_possible_common_factor(num, denom)
 
 	if hpcf < 0:
 		#when the numerator or both terms are negative
