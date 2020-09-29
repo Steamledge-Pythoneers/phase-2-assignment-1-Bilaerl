@@ -14,7 +14,7 @@ def lowest_terms(x):
 			denom = denom // n
 			break
 
-	print(f'lowest num is {num} and lowest denom is {denom}')
+	print(nums_to_string(num,denom))
 
 	#return ""
 
@@ -23,6 +23,11 @@ def string_to_nums(string):
 	splitted_strings = string.split('/')
 	splitted_nums = [int(string) for string in splitted_strings]
 	return splitted_nums
+
+
+def nums_to_string(num,denom):
+	string = str(num) +'/'+ str(denom)
+	return string
 
 
 def highest_possible_common_factor(num,denom):
