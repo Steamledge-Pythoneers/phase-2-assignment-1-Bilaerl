@@ -34,6 +34,16 @@ def string_to_nums(string):
 
 
 def nums_to_string(num,denom):
+	"""Convert given integers into a fraction in string form
+
+	INPUT:
+	num - The numerator of the fraction
+	denom - Denominator of the fraction
+
+	OUTPUT:
+	string - fraction in string form
+	"""
+
 	string = str(num) +'/'+ str(denom)
 	return string
 
