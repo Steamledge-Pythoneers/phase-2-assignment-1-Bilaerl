@@ -13,28 +13,6 @@ def lowest_terms(x):
 		return result
 
 
-def find_lowest_terms(num,denom):
-	hpcf = highest_possible_common_factor(num,denom)
-
-	if hpcf < 0:
-		for n in range(hpcf, 0):
-			if (num % n == 0) and (denom % n == 0):
-				num = num // n
-				denom = denom // n
-				break
-	else:
-		for n in reversed(range(1,hpcf+1)):
-			if (num % n == 0) and (denom % n == 0):
-				num = num // n
-				denom = denom // n
-				break
-	
-	if denom < 0:
-		num, denom = -num, -denom
-	
-	return num, denom
-
-
 def string_to_nums(string):
 	splitted_strings = string.split('/')
 	splitted_nums = [int(string) for string in splitted_strings]
@@ -63,6 +41,28 @@ def highest_possible_common_factor(num,denom):
 
 	#return highest possible common factor
 	return hpcf
+
+
+def find_lowest_terms(num,denom):
+	hpcf = highest_possible_common_factor(num,denom)
+
+	if hpcf < 0:
+		for n in range(hpcf, 0):
+			if (num % n == 0) and (denom % n == 0):
+				num = num // n
+				denom = denom // n
+				break
+	else:
+		for n in reversed(range(1,hpcf+1)):
+			if (num % n == 0) and (denom % n == 0):
+				num = num // n
+				denom = denom // n
+				break
+	
+	if denom < 0:
+		num, denom = -num, -denom
+	
+	return num, denom
 
 
 if __name__ == "__main__":
