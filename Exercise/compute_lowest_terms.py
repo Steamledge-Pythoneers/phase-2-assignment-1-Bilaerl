@@ -49,9 +49,23 @@ def nums_to_string(num,denom):
 
 
 def highest_possible_common_factor(num,denom):
+	""" Find the highest possible common factor between two numbers
+
+	The highest possible common factor of given set of numbers is a number that might or might not be
+	the Highest Common Factor of those numbers, but above which the given numbers has no common factor
+
+	INPUT:
+	num - The first number
+	denom - The second number
+
+	OUTPUT:
+	hpcf - The highest possible common factor of the two given numbers
+	"""
+
 	#find the smallest between num and denom
 	smallest = num if abs(num) < abs(denom) else denom
 	
+	#find the highest possible common factor
 	if (num % smallest == 0) and (denom % smallest == 0):
 		hpcf = smallest 
 	elif smallest == 1:
@@ -63,7 +77,6 @@ def highest_possible_common_factor(num,denom):
 	else:
 		hpcf = smallest//2
 
-	#return highest possible common factor
 	return hpcf
 
 
