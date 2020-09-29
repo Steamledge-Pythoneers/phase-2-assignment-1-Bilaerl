@@ -8,11 +8,18 @@ def lowest_terms(x):
 	#print(f'Denom: {denom}')
 	#print(f'HPCF: {hpcf}')
 
-	for n in reversed(range(1,hpcf+1)):
-		if (num % n == 0) and (denom % n == 0):
-			num = num // n
-			denom = denom // n
-			break
+	if hpcf < 0:
+		for n in range(hpcf, 0):
+			if (num % n == 0) and (denom % n == 0):
+				num = num // n
+				denom = denom // n
+				break
+	else:
+		for n in reversed(range(1,hpcf+1)):
+			if (num % n == 0) and (denom % n == 0):
+				num = num // n
+				denom = denom // n
+				break
 
 	result = nums_to_string(num,denom)
 	return result
@@ -31,7 +38,7 @@ def nums_to_string(num,denom):
 
 def highest_possible_common_factor(num,denom):
 	#find the smallest between num and denom
-	smallest = abs(num) if abs(num) < abs(denom) else abs(denom)
+	smallest = num if abs(num) < abs(denom) else denom
 	
 	if (num % smallest == 0) and (denom % smallest == 0):
 		hpcf = smallest 
