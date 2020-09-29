@@ -4,9 +4,18 @@ def lowest_terms(x):
 	num, denom = string_to_nums(x)
 	hpcf = highest_possible_common_factor(num,denom)
 
-	print(num)
-	print(denom)
-	print(hpcf)
+	print(f'Num: {num}')
+	print(f'Denom: {denom}')
+	print(f'HPCF: {hpcf}')
+
+	for n in reversed(range(1,hpcf+1)):
+		if (num % n == 0) and (denom % n == 0):
+			num = num // n
+			denom = denom // n
+			break
+
+	print(f'lowest num is {num} and lowest denom is {denom}')
+
 	#return ""
 
 
@@ -34,4 +43,4 @@ def highest_possible_common_factor(num,denom):
 
 
 if __name__ == "__main__":
-	lowest_terms('15/10')
+	lowest_terms('15/12')
