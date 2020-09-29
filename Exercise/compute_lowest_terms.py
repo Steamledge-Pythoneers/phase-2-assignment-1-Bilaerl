@@ -1,6 +1,7 @@
 ## TODO: complete the function "lowest_terms" below
 
 def lowest_terms(x):
+	#convert the given string into two integers
 	num, denom = string_to_nums(x)
 
 	if num == 0:
@@ -8,7 +9,9 @@ def lowest_terms(x):
 	elif denom == 0:
 		return 'Undefined'
 	else:
+		#find the lowest terms for num and denom
 		num, denom = find_lowest_terms(num,denom)
+		#convert terms from integers to string
 		result = nums_to_string(num,denom)
 		return result
 
