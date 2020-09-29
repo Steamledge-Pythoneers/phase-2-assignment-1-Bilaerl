@@ -27,6 +27,9 @@ def find_lowest_terms(num,denom):
 				denom = denom // n
 				break
 	
+	if denom < 0:
+		num, denom = -num, -denom
+	
 	return num, denom
 
 
@@ -61,4 +64,4 @@ def highest_possible_common_factor(num,denom):
 
 
 if __name__ == "__main__":
-	print(lowest_terms('20/10'))
+	print(lowest_terms('20/-10'))
