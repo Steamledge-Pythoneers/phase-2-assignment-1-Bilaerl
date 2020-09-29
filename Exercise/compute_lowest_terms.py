@@ -6,27 +6,28 @@ def lowest_terms(x):
 	if num == 0:
 		return '0'
 	else:
-		hpcf = highest_possible_common_factor(num,denom)
-
-		#print(f'Num: {num}')
-		#print(f'Denom: {denom}')
-		#print(f'HPCF: {hpcf}')
-
-		if hpcf < 0:
-			for n in range(hpcf, 0):
-				if (num % n == 0) and (denom % n == 0):
-					num = num // n
-					denom = denom // n
-					break
-		else:
-			for n in reversed(range(1,hpcf+1)):
-				if (num % n == 0) and (denom % n == 0):
-					num = num // n
-					denom = denom // n
-					break
-
+		num, denom = find_lowest_terms(num,denom)
 		result = nums_to_string(num,denom)
 		return result
+
+
+def find_lowest_terms(num,denom):
+	hpcf = highest_possible_common_factor(num,denom)
+
+	if hpcf < 0:
+		for n in range(hpcf, 0):
+			if (num % n == 0) and (denom % n == 0):
+				num = num // n
+				denom = denom // n
+				break
+	else:
+		for n in reversed(range(1,hpcf+1)):
+			if (num % n == 0) and (denom % n == 0):
+				num = num // n
+				denom = denom // n
+				break
+	
+	return num, denom
 
 
 def string_to_nums(string):
