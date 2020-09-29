@@ -17,7 +17,18 @@ def lowest_terms(x):
 
 
 def string_to_nums(string):
+	"""Convert given fraction from string into integers
+
+	INPUT:
+	string - Fraction in string form
+
+	OUTPUT:
+	splitted_nums - A list consisting of two integers representing the numerator and denominator of given fraction respectively
+	"""
+
+	#split string
 	splitted_strings = string.split('/')
+	#convert splitted strings to integers
 	splitted_nums = [int(string) for string in splitted_strings]
 	return splitted_nums
 
