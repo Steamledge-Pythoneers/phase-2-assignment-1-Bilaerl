@@ -4,10 +4,10 @@ def lowest_terms(x):
 	#convert the given string into two integers
 	num, denom = string_to_nums(x)
 
-	if num == 0:
-		return '0'
-	elif denom == 0:
+	if denom == 0:
 		return 'Undefined'
+	elif num == 0:
+		return '0'
 	else:
 		#find the lowest terms for num and denom
 		num, denom = find_lowest_terms(num, denom)
