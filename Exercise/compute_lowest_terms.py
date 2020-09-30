@@ -64,7 +64,7 @@ def highest_possible_common_factor(num, denom):
 	"""
 
 	#find the smallest between num and denom
-	smallest = num if abs(num) < abs(denom) else denom
+	smallest = min(abs(num), abs(denom))
 	
 	#find the highest possible common factor
 	if (num % smallest == 0) and (denom % smallest == 0):
