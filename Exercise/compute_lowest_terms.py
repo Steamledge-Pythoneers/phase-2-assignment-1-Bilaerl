@@ -20,10 +20,10 @@ def string_to_nums(string):
 	"""Convert given fraction from string into integers
 
 	INPUT:
-	string - Fraction in string form
+	string (str) - Fraction in string form
 
 	OUTPUT:
-	splitted_nums - A list consisting of two integers representing the numerator and denominator of given fraction respectively
+	splitted_nums (list) - A list consisting of two integers representing the numerator and denominator of given fraction respectively
 	"""
 
 	#split string
@@ -38,11 +38,11 @@ def nums_to_string(num, denom):
 	"""Convert given integers into a fraction in string form
 
 	INPUT:
-	num - The numerator of the fraction
-	denom - Denominator of the fraction
+	num (int) - The numerator of the fraction
+	denom (int) - Denominator of the fraction
 
 	OUTPUT:
-	string - fraction in string form
+	string (str) - fraction in string form
 	"""
 
 	string = str(num) +'/'+ str(denom)
@@ -56,11 +56,11 @@ def highest_possible_common_factor(num, denom):
 	the Highest Common Factor of those numbers, but above which the given numbers has no common factor
 
 	INPUT:
-	num - The first number
-	denom - The second number
+	num (int) - The first number
+	denom (int) - The second number
 
 	OUTPUT:
-	hpcf - The highest possible common factor of the two given numbers
+	(int) - The highest possible common factor of the two given numbers
 	"""
 
 	#find the smallest between num and denom
@@ -78,12 +78,12 @@ def find_lowest_terms(num, denom):
 	"""Find the lowest terms for given two numbers
 
 	INPUT:
-	num - The first number
-	denom - The second number
+	num (int) - The first number
+	denom (int) - The second number
 
 	OUTPUT:
-	num - Lowest term for given num
-	denom - Lowest term for given denom
+	num (int) - Lowest term for given num
+	denom (int) - Lowest term for given denom
 	"""
 
 	#get the highest possible common multiple of the two numbers
