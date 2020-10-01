@@ -1,6 +1,15 @@
 ## TODO: complete the function "lowest_terms" below
 
 def lowest_terms(x):
+	"""Find the lowest terms of a given fraction
+
+	INPUT:
+	x (str) - Fraction which's lowest term should be found
+
+	OUTPUT:
+	result (str) - The lowest terms of the given fraction
+	"""
+
 	#convert the given string into two integers
 	num, denom = string_to_nums(x)
 
