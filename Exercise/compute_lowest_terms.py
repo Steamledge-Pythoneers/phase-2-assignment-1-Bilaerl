@@ -41,7 +41,7 @@ def lowest_terms(x):
 			num, denom = -num, -denom
 		
 		#convert terms from integers to string
-		result = nums_to_string(num, denom)
+		result = str(num) +'/'+ str(denom)
 		return result
 
 
@@ -61,21 +61,6 @@ def string_to_nums(string):
 	splitted_nums = [int(string) for string in splitted_strings]
 
 	return splitted_nums
-
-
-def nums_to_string(num, denom):
-	"""Convert given integers into a fraction in string form
-
-	INPUT:
-	num (int) - The numerator of the fraction
-	denom (int) - Denominator of the fraction
-
-	OUTPUT:
-	string (str) - fraction in string form
-	"""
-
-	string = str(num) +'/'+ str(denom)
-	return string
 
 
 def highest_possible_common_factor(num, denom):
