@@ -9,8 +9,28 @@ def lowest_terms(x):
 	elif num == 0:
 		return '0'
 	else:
-		#find the lowest terms for num and denom
-		num, denom = find_lowest_terms(num, denom)
+		#get the highest possible common multiple of the two numbers
+		hpcf = highest_possible_common_factor(num, denom)
+
+		if hpcf < 0:
+			#when the numerator or both terms are negative
+			for n in range(hpcf, 0):
+				if (num % n == 0) and (denom % n == 0):
+					num = num // n
+					denom = denom // n
+					break
+		else:
+			#when both terms are possitive
+			for n in reversed(range(1,hpcf+1)):
+				if (num % n == 0) and (denom % n == 0):
+					num = num // n
+					denom = denom // n
+					break
+		
+		if denom < 0:
+			#when denominator is negative
+			num, denom = -num, -denom
+		
 		#convert terms from integers to string
 		result = nums_to_string(num, denom)
 		return result
@@ -68,44 +88,7 @@ def highest_possible_common_factor(num, denom):
 	
 	#find the highest possible common factor
 	return smallest if (num % smallest == 0) and (denom % smallest == 0) else smallest // 2
-
-
-def find_lowest_terms(num, denom):
-	"""Find the lowest terms for given two numbers
-
-	INPUT:
-	num (int) - The first number
-	denom (int) - The second number
-
-	OUTPUT:
-	num (int) - Lowest term for given num
-	denom (int) - Lowest term for given denom
-	"""
-
-	#get the highest possible common multiple of the two numbers
-	hpcf = highest_possible_common_factor(num, denom)
-
-	if hpcf < 0:
-		#when the numerator or both terms are negative
-		for n in range(hpcf, 0):
-			if (num % n == 0) and (denom % n == 0):
-				num = num // n
-				denom = denom // n
-				break
-	else:
-		#when both terms are possitive
-		for n in reversed(range(1,hpcf+1)):
-			if (num % n == 0) and (denom % n == 0):
-				num = num // n
-				denom = denom // n
-				break
 	
-	if denom < 0:
-		#when denominator is negative
-		num, denom = -num, -denom
-	
-	return num, denom
-
 
 if __name__ == "__main__":
 	print(lowest_terms('1/1'))
