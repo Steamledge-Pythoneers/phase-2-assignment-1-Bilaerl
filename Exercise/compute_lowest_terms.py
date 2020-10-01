@@ -67,11 +67,10 @@ def highest_possible_common_factor(num, denom):
 	smallest = min(abs(num), abs(denom))
 	
 	#find the highest possible common factor
-	hpcf_dict = {1:1, 2:2, 3:3}
-	if smallest not in hpcf_dict.keys():
-		return smallest if (num % smallest == 0) and (denom % smallest == 0) else smallest // 2
+	if smallest == 1:
+		return 1
 	else:
-		return hpcf_dict[smallest]
+		return smallest if (num % smallest == 0) and (denom % smallest == 0) else smallest // 2
 
 
 def find_lowest_terms(num, denom):
@@ -112,4 +111,4 @@ def find_lowest_terms(num, denom):
 
 
 if __name__ == "__main__":
-	print(lowest_terms('0/1'))
+	print(lowest_terms('6/2'))
